@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Практикум_11
 {
     /// <summary>
-    /// Задача 11. Сумма всех элементов массива.
+    /// Задача 12. Умножение всех элементов массива на определенное число.
     /// </summary>
     internal class Program
     {
@@ -34,13 +34,21 @@ namespace Практикум_11
             }
         }
 
+        static void MultiplyArray(ref int[] array)
+        {
+            Console.Write("На сколько умножить элементы массива? ");
+            int multiplier = int.Parse(Console.ReadLine());
+
+            array = array.Select(el => el * multiplier).ToArray();
+        }
+
         static void Main(string[] args)
         {
             int[] omas = RandomArray(5, 0, 10);
             OutputArray(omas, "omas");
 
-            int sum = omas.Sum();
-            Console.WriteLine($"Сумма элементов массива omas: {sum}.");
+            MultiplyArray(ref omas);
+            OutputArray(omas, "omas");
 
             Console.ReadKey(true);
         }
