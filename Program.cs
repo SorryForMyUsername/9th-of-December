@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Практикум_11
 {
     /// <summary>
-    /// Задача 4. Сортировка массива по возрастанию.
+    /// Задача 5. Реверс массива.
     /// </summary>
     internal class Program
     {
@@ -26,10 +26,10 @@ namespace Практикум_11
             string[] fruits = { "яблоко", "груша", "апельсин", "мандарин" };
             OutputArray(fruits, "fruits");
 
-            Array.Sort(fruits);
+            Array.Reverse(fruits);
             OutputArray(fruits, "fruits");
 
-            Console.ReadKey();
+            Console.ReadKey(true);
         }
     }
 }
