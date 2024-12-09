@@ -7,27 +7,28 @@ using System.Threading.Tasks;
 namespace Практикум_11
 {
     /// <summary>
-    /// Задача 5. Реверс массива.
+    /// Задача 6. Подсчет количества вхождений определенного числа в массив.
     /// </summary>
     internal class Program
     {
-        static void OutputArray(string[] array, string name)
+        static int[] RandomArray(int length, int min, int max)
         {
-            Console.WriteLine($"Массив {name}:");
+            int[] array = new int[length];
+            Random rnd = new Random();
 
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0; i < length; i++)
             {
-                Console.WriteLine($"{name}[{i}] = {array[i]}");
+                array[i] = rnd.Next(min, max);
             }
+
+            return array;
         }
 
         static void Main(string[] args)
         {
-            string[] fruits = { "яблоко", "груша", "апельсин", "мандарин" };
-            OutputArray(fruits, "fruits");
-
-            Array.Reverse(fruits);
-            OutputArray(fruits, "fruits");
+            int[] omas = RandomArray(100, 0, 10);
+            int countFive = omas.Count(x => x == 5);
+            Console.WriteLine($"Кол-во вхождений числа 5 в массив: {countFive}");
 
             Console.ReadKey(true);
         }
