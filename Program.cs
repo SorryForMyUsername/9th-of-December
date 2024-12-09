@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Практикум_11
 {
     /// <summary>
-    /// Задача 10. Удаление всех четных элементов из массива.
+    /// Задача 11. Сумма всех элементов массива.
     /// </summary>
     internal class Program
     {
@@ -36,13 +36,11 @@ namespace Практикум_11
 
         static void Main(string[] args)
         {
-            int[] omas = RandomArray(10, 0, 100);
+            int[] omas = RandomArray(5, 0, 10);
             OutputArray(omas, "omas");
 
-            Console.WriteLine("\nУдаление чётных элементов массива.\n");
-
-            omas = Array.FindAll(omas, el => el % 2 != 0);
-            OutputArray(omas, "omas");
+            int sum = omas.Sum();
+            Console.WriteLine($"Сумма элементов массива omas: {sum}.");
 
             Console.ReadKey(true);
         }
