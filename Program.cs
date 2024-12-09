@@ -7,40 +7,29 @@ using System.Threading.Tasks;
 namespace Практикум_11
 {
     /// <summary>
-    /// Задача 7. Поиск элемента по условию.
+    /// Задача 8. Изменение размера массива.
     /// </summary>
     internal class Program
     {
-        static int[] RandomArray(int length, int min, int max)
+        static void OutputArray(string[] array, string name)
         {
-            int[] array = new int[length];
-            Random rnd = new Random();
+            Console.WriteLine($"Массив {name}:");
 
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rnd.Next(min, max);
-            }
-
-            return array;
-        } 
-
-        static void Find(int[] array, Func<int, bool> condition)
-        {
-            try
-            {
-                int element = array.First(condition);
-                Console.WriteLine($"Элемент, соответствующий условию: {element}.");
-            }
-            catch
-            {
-                Console.WriteLine($"В массиве нет элементов, удовлетворяющих условию.");
+                Console.WriteLine($"{name}[{i}] = {array[i]}");
             }
         }
 
         static void Main(string[] args)
         {
-            int[] omas = RandomArray(100, 0, 100);
-            Find(omas, x => x >= 50 && x <= 60);
+            string[] fruits = { "яблоко", "груша", "апельсин", "мандарин" };
+            OutputArray(fruits, "fruits");
+
+            Console.WriteLine("\nУменьшение размера массива на 2\n");
+
+            Array.Resize(ref fruits, 2);
+            OutputArray(fruits, "fruits");
 
             Console.ReadKey(true);
         }
