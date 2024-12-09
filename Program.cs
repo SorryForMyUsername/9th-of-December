@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Практикум_11
 {
+    /// <summary>
+    /// Задача 1. Определить количество элементов одномерного массива.
+    /// </summary>
     internal class Program
     {
         static void Main(string[] args)
