@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Практикум_11
 {
     /// <summary>
-    /// Задача 6. Подсчет количества вхождений определенного числа в массив.
+    /// Задача 7. Поиск элемента по условию.
     /// </summary>
     internal class Program
     {
@@ -22,13 +22,25 @@ namespace Практикум_11
             }
 
             return array;
+        } 
+
+        static void Find(int[] array, Func<int, bool> condition)
+        {
+            try
+            {
+                int element = array.First(condition);
+                Console.WriteLine($"Элемент, соответствующий условию: {element}.");
+            }
+            catch
+            {
+                Console.WriteLine($"В массиве нет элементов, удовлетворяющих условию.");
+            }
         }
 
         static void Main(string[] args)
         {
-            int[] omas = RandomArray(100, 0, 10);
-            int countFive = omas.Count(x => x == 5);
-            Console.WriteLine($"Кол-во вхождений числа 5 в массив: {countFive}");
+            int[] omas = RandomArray(100, 0, 100);
+            Find(omas, x => x >= 50 && x <= 60);
 
             Console.ReadKey(true);
         }
