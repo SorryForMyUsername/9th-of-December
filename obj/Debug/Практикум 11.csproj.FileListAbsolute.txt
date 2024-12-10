@@ -1,0 +1,7 @@
+D:\215б\Практикум 11\bin\Debug\Практикум 11.exe.config
+D:\215б\Практикум 11\bin\Debug\Практикум 11.exe
+D:\215б\Практикум 11\bin\Debug\Практикум 11.pdb
+D:\215б\Практикум 11\obj\Debug\Практикум 11.csproj.AssemblyReference.cache
+D:\215б\Практикум 11\obj\Debug\Практикум 11.csproj.CoreCompileInputs.cache
+D:\215б\Практикум 11\obj\Debug\Практикум 11.exe
+D:\215б\Практикум 11\obj\Debug\Практикум 11.pdb
