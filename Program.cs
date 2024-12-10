@@ -7,23 +7,10 @@ using System.Threading.Tasks;
 namespace Практикум_11
 {
     /// <summary>
-    /// Задача 10. Удаление всех четных элементов из массива.
+    /// Задача 10. Удаление всех четных элементов из массива и в новом массиве сложить элементы.
     /// </summary>
     internal class Program
     {
-        static int[] RandomArray(int length, int min, int max)
-        {
-            int[] array = new int[length];
-            Random rnd = new Random();
-
-            for (int i = 0; i < length; i++)
-            {
-                array[i] = rnd.Next(min, max);
-            }
-
-            return array;
-        }
-
         static void OutputArray(int[] array, string name)
         {
             Console.WriteLine($"Массив {name}:");
@@ -36,13 +23,12 @@ namespace Практикум_11
 
         static void Main(string[] args)
         {
-            int[] omas = RandomArray(10, 0, 100);
+            int[] omas = { 3, 7, 1, 9, 5, 6, 8, 10 };
+            omas = omas.Where(x => x % 2 != 0).ToArray();
             OutputArray(omas, "omas");
 
-            Console.WriteLine("\nУдаление чётных элементов массива.\n");
-
-            omas = Array.FindAll(omas, el => el % 2 != 0);
-            OutputArray(omas, "omas");
+            int sum = omas.Sum();
+            Console.WriteLine($"Сумма элементов нового массива: {sum}");
 
             Console.ReadKey(true);
         }
