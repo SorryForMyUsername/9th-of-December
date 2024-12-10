@@ -32,6 +32,9 @@ namespace Практикум_11
             string[] nameLengthIs3 = Array.FindAll(people, person => person.Length == 3);
             OutputArray(nameLengthIs3, "nameLengthIs3");
 
+            Array.Sort(people, 0, 3);
+            OutputArray(people, "people");
+            
             Console.ReadKey(true);
         }
     }
