@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Практикум_11
 {
+    /// <summary>
+    /// Задача 7. Поиск элемента по условию.
+    /// </summary>
     internal class Program
     {
         static void OutputArray(string[] array, string name)
