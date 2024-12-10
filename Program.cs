@@ -7,40 +7,35 @@ using System.Threading.Tasks;
 namespace Практикум_11
 {
     /// <summary>
-    /// Задача 7. Поиск элемента по условию.
+    /// Задача 14. Дан курс рубля России за январь 2023 года. Рассчитать:
+    /// а) среднее значение КВ (СКВ);
+    /// б) максимальное значение КВ  (МаксКВ);
+    /// в) минимальное значение КВ  (МинКВ);
+    /// г) день с максимальным значением КВ  (МаксКВД);
+    /// д) день с минимальным значением КВ  (МинКВД).
     /// </summary>
     internal class Program
     {
-        static int[] RandomArray(int length, int min, int max)
+        static void OutputArray(string[] array, string name)
         {
-            int[] array = new int[length];
-            Random rnd = new Random();
+            Console.WriteLine($"Массив {name}:");
 
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                array[i] = rnd.Next(min, max);
-            }
-
-            return array;
-        } 
-
-        static void Find(int[] array, Func<int, bool> condition)
-        {
-            try
-            {
-                int element = array.First(condition);
-                Console.WriteLine($"Элемент, соответствующий условию: {element}.");
-            }
-            catch
-            {
-                Console.WriteLine($"В массиве нет элементов, удовлетворяющих условию.");
+                Console.WriteLine($"{name}[{i}] = {array[i]}");
             }
         }
 
         static void Main(string[] args)
         {
-            int[] omas = RandomArray(100, 0, 100);
-            Find(omas, x => x >= 50 && x <= 60);
+            string[] people = { "Tom", "Sam", "Bob", "Kate", "Tom", "Alice" };
+            string first = Array.Find(people, person => person.Length > 3);
+            string end = Array.FindLast(people, person => person.Length > 3);
+            Console.WriteLine(first);
+            Console.WriteLine(end);
+
+            string[] nameLengthIs3 = Array.FindAll(people, person => person.Length == 3);
+            OutputArray(nameLengthIs3, "nameLengthIs3");
 
             Console.ReadKey(true);
         }
